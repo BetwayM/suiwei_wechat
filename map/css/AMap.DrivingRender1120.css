@@ -1,0 +1,420 @@
+/*
+  娉ㄦ剰锛孉Map.Walking.css涓嶢Map.Driving.css鐨勪唬鐮佸畬鍏ㄤ竴鏍�
+*/
+.amap-lib-driving{
+	margin: 0;
+	padding: 0;
+	color: #565656;
+	font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	word-wrap: break-word;
+	background-color: white;
+	
+}
+.amap-lib-driving ol,.amap-lib-driving ul {
+	list-style: outside none none;
+	margin: 0;
+	padding: 0;
+}
+.amap-lib-driving .planTitle .clearfix a {
+	text-decoration:underline;
+}
+.amap-lib-driving .blue{
+	color:blue;
+}
+.amap-lib-driving p{
+	margin: 0;
+}
+.amap-lib-driving b,.amap-lib-driving strong {
+	font-weight: 700;
+}
+.amap-lib-driving dt{
+	cursor: pointer;
+    height: auto;
+}
+.amap-lib-driving .plan-nobus>dt{
+	
+	font-size: 13px;
+	line-height: 50px;
+}
+
+/* 浜ら€氭柟妗堟爣棰� */
+.amap-lib-driving .planTitle {
+	position: relative;
+	padding: 2px 8px;
+	margin-bottom: 2px;
+	
+	background: #fff;
+	font-size: 14px;
+	cursor: pointer;
+}
+/*.planTitle.current, .planTitle:hover {*/
+.amap-lib-driving .planTitle:hover {
+	background: #fff;
+}
+.amap-lib-driving .planTitle.current .sidebar, .amap-lib-driving .planTitle:hover .sidebar{
+	display: block;
+}
+/* 绾㈣壊*/
+.amap-lib-driving .planTitle span.red {
+	color: #ff4546;
+}
+.amap-lib-driving .planTitle h3 {
+	margin-top: 0;
+	font-size: 13px;
+	margin-bottom: 1px;
+}
+.amap-lib-driving .planTitle p {
+	font-size: 12px;
+	margin-bottom: 1px;
+	color: #666;
+}
+.amap-lib-driving .planTitle ul  {
+	display: none;
+	margin-top: 3px;
+}
+.amap-lib-driving .planTitle ul li {
+	float: left;
+}
+.amap-lib-driving .planTitle ul li:last-child {
+	border-right: none;
+}
+.amap-lib-driving .planTitle ul li a {
+	background-repeat: no-repeat;
+	color: #0000ff;
+	font-size: 12px;
+	height: 16px;
+	line-height: 16px;
+	padding-right: 8px;
+	text-indent: 20px;
+}
+.amap-lib-driving .planTitle ul li a.icon-share {
+	padding-left: 0px;
+	background-position: 0px center;
+}
+.amap-lib-driving .icon-arrow-up {
+	background-image: url(http://webapi.amap.com/theme/v1.3/images/newpc/icon/arrow-up.png);
+}
+.amap-lib-driving .planTitle .sidebar {
+	display: none;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: 50%;
+	right: 0px;
+	pointer-events:none;
+	margin-top: -15px;
+}
+.amap-lib-driving .planTitle .sidebar div{
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	transition: all 300ms ease-in 0s;
+	-webkit-transition: all 300ms ease-in 0s;
+	-moz-transition: all 300ms ease-in 0s;
+
+	background-image: url(http://webapi.amap.com/theme/v1.3/images/newpc/icon/arrow-down.png);
+}
+.amap-lib-driving .planTitle .sidebar div.expand{
+	background-image: url(http://webapi.amap.com/theme/v1.3/images/newpc/icon/arrow-up.png);
+}
+.amap-lib-driving .plan {
+	display: none;
+	font-size: 12px;
+}
+.amap-lib-driving .plan .grey {
+	color: #999;
+}
+.amap-lib-driving .plan .blue {
+	color: #3baeca;
+}
+.amap-lib-driving .plan dt {
+	position: relative;
+	margin-left: 35px;
+	line-height: 50px;
+	border-bottom: 1px solid #f0f0f0;
+	padding-bottom: 3px;
+	padding-top: 3px;
+}
+.amap-lib-driving .plan dt:hover {
+	background: #fafafa;
+}
+
+/* 鏂规鏍囬鏁翠綋鐨勬牱寮� */
+.amap-lib-driving .plan dt {
+	font-weight: bold;
+}
+.amap-lib-driving .plan dt span.grey {
+	font-weight: normal;
+}
+.amap-lib-driving .plan dt span.line {
+	padding-left: 5px;
+	padding-right: 5px;
+	display: inline-block;
+	line-height: 22px;
+	color: #fff;
+	background: #3baeca;
+	text-indent: 0px;
+}
+.amap-lib-driving .plan dt:first-child {
+	border-top: 1px solid #f0f0f0;
+}
+/*.amap-lib-driving .plan dt:before, .amap-lib-driving .plan dt:after, .amap-lib-driving .plan dd:after {
+	content: " ";
+	position: absolute;
+}*/
+.amap-lib-driving .plan dt .beforedt {
+	top: 50%;
+	left: -30px;
+	border-radius: 50%;
+	background-color: #fff;
+	background-position: center;
+	background-repeat: no-repeat;
+	text-indent: 0px;
+	text-align: center;
+	font-size: 12px;
+	z-index: 10;
+}
+.amap-lib-driving .beforedt{
+	top: 15px;
+	left: -22px;
+	height: 100%;
+	width: 4px;
+	z-index: -1;
+	position: absolute;
+	background-color: #e5e7e8;
+}
+.amap-lib-driving .afterdt{
+	position: absolute;
+}
+
+/* 璧峰鐐瑰拰缁堢偣鏍峰紡 */
+.amap-lib-driving .plan dt.start, .amap-lib-driving .plan dt.end, .amap-lib-driving .plan dt.via {
+	font-size: 14px;
+}
+.amap-lib-driving .plan dt.start .beforedt, .amap-lib-driving .plan dt.end .beforedt, .amap-lib-driving .plan dt.via .beforedt {
+	margin-top: -10px;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	color: #FFF;
+	background-image: url(http://webapi.amap.com/theme/v1.3/images/newpc/diricon.png);
+
+}
+.amap-lib-driving .plan dt.start .beforedt {
+	background-position: -47px -104px;
+}
+.amap-lib-driving .plan dt.via .beforedt {
+	background-position: -85px -104px;
+}
+.amap-lib-driving .plan dt.end .beforedt {
+	background-position: -126px -104px
+}
+.amap-lib-driving .plan dt.end .afterdt {
+	height: 0%;
+}
+.amap-lib-driving .afterdt {
+	background-color: #e5e7e8;
+	left: -22px;
+	top: 20px;
+	height: 500px;
+	width: 4px;
+	z-index: 9;
+}
+.amap-lib-driving > .plan dt > .afterdt { /*涓轰簡鍏煎ie6,楂樺害鏈潵搴旇鏄�100%,ie涓嬭缃簡500px*/
+	height: 100%;
+}
+
+
+
+/* 姝ヨ銆佸叕浜ゃ€佸湴閾佹牱寮� */
+.amap-lib-driving .plan dt.walk .beforedt {
+	left: -27px;
+	width: 10px;
+	height: 10px;
+	margin-top: -6px;
+	border: 2px solid #ddd;
+}
+.amap-lib-driving .plan dt.bus .beforedt, .amap-lib-driving .plan dt.subway .beforedt {
+	left: -31px;
+	width: 24px;
+	height: 24px;
+	margin-top: -12px;
+	border: 1px solid #ddd;	
+	background-image: url(http://webapi.amap.com/theme/v1.3/images/newpc/diricon.png);
+
+}
+.amap-lib-driving .plan dt.bus .afterdt {
+	background-color: #33a7ff;
+}
+.amap-lib-driving .plan dt.subway .afterdt {
+	background-color: #3baeca;
+}
+.amap-lib-driving .plan dt.bus .beforedt {
+	/*background-size: 15px;	*/
+	background-position: -164px -102px;
+}
+.amap-lib-driving .plan dt.subway .beforedt {
+	/*background-image: url(http://webapi.amap.com/theme/v1.3/images/newpc/icon/subway-active.png);	*/
+	/*background-size: 15px;	*/
+	background-position: -243px -101px;
+}
+
+
+/* 姝ヨ鍜岄┚杞︽柟妗堟牱寮� */
+.amap-lib-driving .plan-nobus{
+	margin-top: 3px;
+}
+.amap-lib-driving .plan-nobus dt span {
+	display: block;
+	line-height: 18px;
+}
+/*姝ヨ鍜岄┚杞︽柟妗堝乏渚у浘鏍囨牱寮�*/
+.amap-lib-driving .plan-nobus dt .beforedt {
+	left: -31px;
+	width: 21px;
+	height: 21px;
+	margin-top: -12px;
+	border: 1px solid #ddd;
+	background-image: url(http://webapi.amap.com/theme/v1.3/images/newpc/diricon.png);
+}
+.amap-lib-driving .plan-nobus dt.start .beforedt, .amap-lib-driving .plan-nobus dt.end .beforedt, .amap-lib-driving .plan-nobus dt.via .beforedt {
+	border: none;
+}
+.amap-lib-driving .plan-nobus dt.turn-go .beforedt {
+	background-image: url(http://webapi.amap.com/theme/v1.3/images/newpc/icon/turn-go.png);
+}
+.amap-lib-driving .plan-nobus dt.turn-advance .beforedt {
+	background-position: -46px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-left .beforedt {
+	background-position: -87px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-right .beforedt {
+	background-position: -124px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-keepleft .beforedt {
+	background-position: -406px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-keepright .beforedt {
+	background-position: -445px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-leftup .beforedt {
+	background-position: -165px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-leftdown .beforedt {
+	background-position: -246px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-rightup .beforedt {
+	background-position: -206px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-rightdown .beforedt {
+	background-position: -284px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-leftback .beforedt {
+	background-position: -327px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-rightback .beforedt {
+	background-position: -365px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-enterRing .beforedt {
+	background-position: -561px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-leaveRing .beforedt {
+	background-position: -602px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-slow .beforedt {
+	background-position: -524px -23px;
+}
+/*.plan-nobus dt.turn-leftup .beforedt {
+	background-position: -50px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-leftdown .beforedt {
+	background-position: -50px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-rightup .beforedt {
+	background-position: -50px -23px;
+}
+.amap-lib-driving .plan-nobus dt.turn-rightdown .beforedt {
+	background-position: -50px -23px;
+}*/
+.amap-lib-driving .plan-nobus dt.turn-crosswalk .beforedt {
+	background-position: -126px -184px;
+}
+.amap-lib-driving .plan-nobus dt.turn-overpass .beforedt {
+	background-position: -164px -184px;
+}
+.amap-lib-driving .plan-nobus dt.turn-underpass .beforedt {
+	background-position: -85px -184px;
+}
+.amap-lib-driving .plan-nobus dt.turn-squarepass .beforedt {
+	background-position: -204px -184px;
+}
+
+.amap-lib-marker-from {
+	position: absolute;
+	width: 28px;
+	height: 31px;
+	color: #e90000;
+	background: url(../images/start.png) no-repeat;
+	cursor: pointer;
+}
+.amap-lib-marker-to {
+	position: absolute;
+	width: 28px;
+	height: 31px;
+	color: #e90000;
+	background: url(../images/end.png) no-repeat;
+	cursor: pointer;
+}
+.amap-combo-close {
+	position: absolute;
+	top: 11px;
+	right: 10px;
+	background: url(http://webapi.amap.com/theme/v1.3/images/amap-info.png) no-repeat -1px -151px;
+	width: 12px;
+	height: 12px;
+	cursor: pointer;
+}
+.amap-content-body{
+	min-width: 200px;
+	max-width: 240px;
+	font-family: Helvetica, "Hiragino Sans GB", "Microsoft Yahei", "寰蒋闆呴粦", Arial, sans-serif;
+	box-shadow: 0 0 0.5px rgba(0, 0, 100, 0.6);
+	background: none repeat scroll 0 0 white;
+	border-radius: 2px;
+	text-align:left;
+	border:#C0C0C0 solid 1px;
+}
+
+.amap-combo-sharp {
+	margin: 0 auto;
+	bottom:1px;
+	position: relative;
+	background: url(http://webapi.amap.com/theme/v1.3/images/amap-info.png) no-repeat -5px -564px;
+	width: 18px;
+	height: 9px;
+}
+.amap-lib-infowindow {
+	padding: 0px 0;
+	padding-top: 0;
+	position: relative;
+	background-color: white;
+	margin: 8px
+}
+.amap-lib-infowindow-title {
+	line-height: 22px;
+	font-size: 14px;
+	border-bottom: 1px #99adce solid;
+	padding-right:15px;
+}
+.amap-lib-infowindow-content {
+	padding-top: 5px;
+	overflow: hidden;
+	font-size: 12px;
+	zoom: 1
+}

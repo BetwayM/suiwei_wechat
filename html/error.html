@@ -1,0 +1,68 @@
+<!DOCTYPE>
+<html>
+        <title>error!</title>
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">   
+    <head>
+  
+    <style>
+    *,body{
+    margin:0;
+    padding: 0;
+    background: #fff;
+    font-family: "苹方","微软雅黑","Helvetica Neue", Helvetica, Arial, sans-serif;   
+    overflow-x: hidden;     
+    }
+    body{
+        width: 100%;
+        height: 100%;
+    }
+    .main_icon{
+        width: 175px;
+        height: 175px;
+        display:block;
+    
+        position: relative;margin: 0 auto;
+        margin-top: 50px;
+    }
+    .errtip{
+        width: 100%;
+        position: relative;
+        display: block;
+        line-height: 40px;
+        font-size: 18px;
+        color: #fb5e79;
+        font-weight: bold;
+        text-align: center;
+    }
+    .suberrtip{
+        width: 100%;
+        position: relative;
+        display: block;
+        line-height: 30px;
+        font-size: 13.5px;
+        color: #797979;
+    
+        text-align: center;
+    }
+    button{
+        width: 120px;
+        height: 45px;
+        background: #f3f3f3;
+        border: 0.5px solid #fb5e79;
+        border-radius: 5px;
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        color: #797979;
+    }
+    </style>
+    </head>
+    <body>
+        <img src="../images/error.png" alt="" class="main_icon">
+        <p class="errtip">网络请求失败</p>
+        <p class="suberrtip">请在网络通畅情况下操作</p>
+        <button type="text" onclick="javascript:history.back(-1);">刷新一下</button>
+    </body>
+</html>

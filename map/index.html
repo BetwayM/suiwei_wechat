@@ -1,0 +1,100 @@
+<!DOCTYPE>
+<html>
+    <title>随卫地图导航</title>
+    <head>
+        <meta charset="utf-8">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">   
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/mapstyle1.3.27.7.css">
+        <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=5f62135f264a6557d27e9acb90cb0825&callback=init&plugin=AMap.Autocomplete,AMap.PlaceSearch,AMap.Driving,AMap.Walking,AMap.CitySearch"></script>
+        <script type="text/javascript" src="https://cache.amap.com/lbs/static/DrivingRender1230.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/AMap.TransferRender1120.css">
+        <link rel="stylesheet" type="text/css" href="css/AMap.DrivingRender1120.css"/>
+        <link rel="stylesheet" type="text/css" href="css/AMap.WalkingRender1120.css"/>
+        <script src="js/vue.js"></script> 
+        <script src="js/jquery-3.2.1.js"></script>
+        <script src="js/index.js"></script>
+    </head>
+    <body>
+        <!--导航栏-->
+        <div class="map_top_nav">
+            <img src="images/back_arrow.png" onclick="javascript:history.back(-1);" alt="" class="back">
+            <div class="top_input">
+                <input type="text" class="search_top" placeholder="搜索地址、公交站" id="search_top" onfocus="isOnFocus(1)" onblur="isOnFocus(0)">
+                <img src="images/clear.png" onclick="clearInput()" class="clear">
+            </div>
+            <img src="images/position.png" onclick="getAPosition()" class="position">
+        </div>
+        <div class="top_tip">
+            
+        </div>
+        <!--导航栏-->
+        <!--地图-->
+        <div id="mainmap"></div>
+        <!--地图-->
+        <!--底部导航-->
+        <div class="navi_btn" >去这里</div>
+        <div class="bottom_nav">
+            <p class="site_tip">您要去的位置：</p>
+            <div class="aim_site">
+                <img src="images/site_icon.png" class="site_icon">
+                <p class="aim_site_text">获取位置中...</p>
+            </div>
+            <p class="site_tip">您当前的位置：</p>
+            <div class="current_site">
+                <img src="images/site_icon.png" class="site_icon">
+                <p class="current_site_text">当前位置</p>
+            </div>
+        </div>
+        <!--底部导航-->
+        <!--路径规划-->
+        <div class="suiwei_road">
+           <div class="suiwei_top_nav">
+             <img src="images/back_arrow.png" class="back" id="back_suiwei">
+             <ul class="top_item">
+                 <li class="under_border">公交</li>
+                 <li>驾车</li>
+                 <li>步行</li>
+             </ul>  
+           </div>
+           <div class="all_bus">
+               <div class="bus_map" id="bus_map"></div>
+                <div class="bus_bottom_nav">
+                      <div class="bus_main_num">21路</div>
+                            <div class="bus_main_subnum">25分钟</div>
+                            <div class="bus_main_detail_btn">详情</div>   
+                   </div>
+               <div id="bus_tip"></div>
+                 <div class="bus_nav">
+                     <div class="bus_top_nav">
+                         <img src="images/back_arrow.png" class="back" id="back_bus">
+                         <p class="bus_detail_top">公交详情</p>
+                     </div>
+                     <div class="amap-lib-transfer"><div class="planTitle"></div><div class="plan"></div></div>
+               </div>
+            </div>
+           <div class="all_car">
+               <div id="car_map"></div>
+               <div class="car_bottom_nav">
+                   <button type="text" class="show_car" onclick="show_instru_road()">查看驾车详情</button>
+                   <p class="car_time"></p>
+                   <div class="car_instru">导航</div>
+                   <div id="car_road"></div> 
+               </div>
+           </div>
+            <div class="all_walk">
+            <div id="walk_map"></div>
+            <div class="walk_bottom_nav">
+                   <button type="text" class="show_walk" onclick="show_walk_road()">查看步行详情</button>
+                   <p class="walk_time"></p>
+                   <div class="walk_instru">导航</div>
+                   <div id="walk_road"></div> 
+               </div>
+              
+           </div>
+        </div>
+        <!--路径规划-->
+    </body>
+</html>

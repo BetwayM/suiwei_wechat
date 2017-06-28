@@ -1,0 +1,433 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.map_top_nav{
+    width: 100%;
+    height: 44px;
+    position: fixed;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0px 2px 2px #f3f3f3;
+}
+.back{
+    height: 30px;
+    display: block;
+    margin-top: 7px;
+    margin-left: 10px;
+    float: left;
+}
+.top_input{
+    width: 75%;
+    height: 44px;
+    display: block;
+    margin: 0 auto;
+}
+.search_top{
+    width: 100%;
+    height: 39px;
+    margin-top: 2px;
+    text-indent: 1.5em;
+    border: none;
+    border: 0.25px solid #dde1e1;
+    border-radius: 20px;
+    background: #fff;
+}
+.clear{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: none;
+  float: right;
+  margin-right: 5px;
+  margin-top: -30px;
+}
+.position{
+    width: 30px;
+    height: 30px;
+    margin-top: -38px;
+    float: right;
+    margin-right: 7px;
+}
+.top_tip{
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    top: 45px;
+    height: 100%;
+    z-index: 3;
+    background: #f3f3f3;
+}
+#mainmap{
+    width: 100%;
+    z-index: 0;
+    position: fixed;
+    margin-top: 44px;
+    height: 100%;
+}
+.bottom_nav{
+    width: 100%;
+	height: 60px;
+	overflow-y: hidden;
+	box-shadow: 1px -2px 2px #f3f3f3;
+	position: fixed;
+    z-index: 1;
+	bottom: 0;
+    background: white;
+}
+.navi_btn{
+   width: 60px;
+	height: 60px;
+	border-radius: 30px;
+	background: #43c2cb;
+	position: fixed;
+	right: 5px;
+	z-index: 2;
+	bottom: 30px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	box-shadow: 1px 2px 2px #43c2cb;
+	line-height: 60px;
+	color: white; 
+}
+.site_tip{
+	width: 100%;
+	text-align: left;
+	float: left;
+	text-indent: 0.5em;
+	display: block;
+	color:#aaa;
+	height: 30px;
+	margin: 0;
+	padding: 0;
+	line-height: 30px;
+	font-size: 12px;
+	position: relative;
+}
+.aim_site,.current_site{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.site_icon{
+    height: 30px;
+    float: left;
+}
+.aim_site_text,.current_site_text{
+    width: 80%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    float: left;
+    color: #222;
+    z-index: 1em;
+    -o-text-overflow: ellipsis;/*兼容opera*/
+	text-overflow: ellipsis;/*这就是省略号喽*/		  
+	overflow: hidden;/*设置超过的隐藏*/
+	white-space: nowrap;/*设置不折行*/
+}
+.suiwei_road{
+    width: 100%;
+    background: #fff;
+    height: 100%;
+    position: fixed;
+    top: 0;left: 100%;
+    z-index: 4;
+}
+.suiwei_top_nav{
+    width: 100%;
+    height: 44px;
+    position: fixed;
+    /*z-index: 5;*/
+    background: #fff;
+    box-shadow: 0px 2px 2px #f3f3f3;
+}
+.top_item{
+    width: 80%;
+    height: 44px;
+    border:none;
+    display: block;
+    margin: 0 auto;
+    list-style: none;
+    background: #fff;
+}
+.top_item li{
+    list-style: none;
+    width: 33.3%;
+    float: left;
+    text-align: center;
+    line-height: 42px;
+    font-size: 14px;
+    color:#222;
+    height: 42px;
+    /*border-bottom: 2px solid #43c2cb;*/
+}
+.top_item li:active{
+  border-bottom: 2px solid #43c2cb;  
+}
+/*click style*/
+.up_border{
+ border-bottom: 2px solid #fff;  
+}
+.under_border{
+    border-bottom: 2px solid #43c2cb;
+}
+.all_bus{
+ width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    top: 45px;
+    background:red;
+}
+.all_car{
+     width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    top: 45px;
+    background:red;
+}
+.all_walk{
+     width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    top: 45px;
+    background:red;
+}
+.bus_main_num{
+	width: 80%;
+	height: 40px;
+	text-align: left;
+	text-indent: 2em;
+	line-height: 40px;
+	font-size: 14px;
+	color: #000;
+	font-weight: bold;
+     -o-text-overflow: ellipsis;/*兼容opera*/
+	text-overflow: ellipsis;/*这就是省略号喽*/		  
+	overflow: hidden;/*设置超过的隐藏*/
+	white-space: nowrap;/*设置不折行*/
+}
+.bus_main_subnum{
+	width: 85%;
+	height: 40px;
+	text-align: left;
+	text-indent: 2em;
+	line-height: 40px;
+	font-size: 12px;
+	color: #aaa;
+	font-weight:lighter;
+     -o-text-overflow: ellipsis;/*兼容opera*/
+	text-overflow: ellipsis;/*这就是省略号喽*/		  
+	overflow: hidden;/*设置超过的隐藏*/
+	white-space: nowrap;/*设置不折行*/
+}
+.bus_main_detail_btn{
+    width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	color: white;
+	background: #43c2cb;
+	border:none;
+	border-radius: 30px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 16px;
+}
+#bus_tip{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    overflow-y: scroll;
+    background: #f3f3f3;
+}
+.bus_nav{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    left: 100%;
+    top: -45px;
+    z-index: 7;
+    background: #f3f3f3;
+}
+.bus_top_nav{
+    width: 100%;
+    height: 44px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    box-shadow: 0px 2px 2px #f3f3f3;
+}
+#bus_map{
+    width: 100%;
+    height: 100%; 
+}
+#car_map{
+    width: 100%;
+    height: 100%;
+}
+#walk_map{
+    width: 100%;
+    height: 100%;
+}
+.bus_bottom_nav{
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+    z-index: 5;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px -2px 2px #f3f3f3;
+}
+.bus_detail_top{
+    width: 50%;
+    position: relative;
+    display: block;
+	height: 44px;
+	line-height: 44px;
+	font-size: 18px;
+	color: #43c2cb;
+	text-align: center;
+	margin: 0 auto;
+}
+.bus_nav .amap-lib-transfer{
+    width: 100%;
+    
+    background: #f3f3f3;
+}
+.bus_nav .amap-lib-transfer .planTitle{
+    width: 100%;
+    overflow-x: hidden;
+    margin-top: 48px;
+    background: #fff;
+}
+.bus_nav .amap-lib-transfer .plan{
+    width: 100%;
+    overflow-x: hidden;
+    background: #fff;
+}
+
+.car_bottom_nav{
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+    z-index: 6;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 1px -2px 2px #f3f3f3;
+}
+.show_car{
+   width: 150px;
+	background: #fb5e79;
+	border:none;
+	color: white;
+	border-radius: 8px;
+	height: 30px;
+	margin-top: 5px;
+	margin-left: 10px;
+	float: left; 
+}
+.car_time{
+    width: 80%;
+	text-align: left;
+	line-height: 40px;
+	font-size: 14px;
+	margin-top: 45px;
+	margin-left: -150px;
+	float: left;
+
+}
+#car_road{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+.car_instru{
+    width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	color: white;
+	background: #43c2cb;
+	border:none;
+	border-radius: 30px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 16px;
+}
+.walk_bottom_nav{
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+    z-index: 6;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 1px -2px 2px #f3f3f3;
+}
+.show_walk{
+   width: 150px;
+	background: #fb5e79;
+	border:none;
+	color: white;
+	border-radius: 8px;
+	height: 30px;
+	margin-top: 5px;
+	margin-left: 10px;
+	float: left; 
+}
+.walk_time{
+    width: 80%;
+	text-align: left;
+	line-height: 40px;
+	font-size: 14px;
+	margin-top: 45px;
+	margin-left: -150px;
+	float: left;
+
+}
+#walk_road{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+.walk_instru{
+    width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	color: white;
+	background: #43c2cb;
+	border:none;
+	border-radius: 30px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 16px;
+}
+/*
+不显示某些内容
+*/
+.blue,.amap-call,.amap-copyright,.amap-mcode,.amap-logo,.amap-lib-driving p{
+    display:none;
+}

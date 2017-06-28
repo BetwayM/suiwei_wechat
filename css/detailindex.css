@@ -1,0 +1,364 @@
+#commit_tip{
+    width: 100%;
+    position: fixed;
+    top: -68px;
+    left: 0;
+    margin:0;
+    padding: 0;
+    height: 64px;
+    z-index: 99999;
+    background: #fff;
+    box-shadow: 1px 2px 2px #c9c9c9;    
+}
+#commit_tip>img{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    display: block;
+    left: 13px;
+    bottom: 10px;    
+}
+#commit_tip>p{
+    width: 90%;
+    height: 32px;
+    line-height: 32px;
+    left: 38px;
+    font-size: 16px;
+    color: #43c2cb;
+    bottom: 2px;
+    position: absolute;
+    display: block;   
+}
+#Top_nav{
+    width: 100%;
+    height: 45px;
+    background: white;
+    box-shadow: 1px 2px 2px #f3f3f3;
+    position: fixed;
+    font-size: 18px;
+    z-index: 2;
+}
+.nav_items{
+    width: 100%;
+    height: 45px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+.nav_1{
+    
+    width: 50%;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    line-height: 42px;
+    text-align: center;
+    float: left;
+    color: #43c2cb; 
+    border-bottom: 3px solid #43c2cb;
+
+} 
+.nav_1:active{
+      color: #43c2cb; 
+      border-bottom: 2px solid #43c2cb;
+  }
+
+.nav_2{
+    color: black;
+    width: 50%;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    line-height: 42px;
+    text-align: center;
+    float: right;
+
+}
+  .nav_2:active{
+      color: #43c2cb; 
+      border-bottom: 3px solid #43c2cb;
+  }
+#Order_All{
+    width: 95%;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 55px;
+    margin-bottom: 15px;
+    background: white;
+    box-shadow: 1px 2px 2px #f3f3f3;
+}
+.main_content{
+    width: 100%;
+    margin-top: 55px;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+}
+.contact_main{
+    width: 100%;
+    margin-top: 10px;
+    margin: 0 auto;
+    background: #f3f3f3;
+    position: relative;
+    display: block; 
+}
+.contact_main hr{
+    width: 90%;
+    margin: 0 auto;
+}
+.user_info{
+    width: 100%;
+    position: relative;
+    display: block;
+    background: white;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.main_info{
+    width: 65%;
+    height: 45px;
+    line-height: 45px;font-size: 15px;
+    text-align: left;
+    float: left;
+    font-weight: bold;
+    margin-left: 15px;
+    color: #43c2cb;
+}
+.suiwei_info{
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+    display: block;
+    background: white;
+    margin: 0 auto;
+    border-radius: 5px; 
+}
+.order_state{
+    float: left;
+    width: 70%;
+    height: 45px;
+    font-size: 15px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    line-height: 45px;
+    color: #43c2cb;
+}
+.order_btn{
+   position: relative;
+   display: block;
+    width: 35%;
+    height: 35px;
+    padding: 0px;
+    margin-top: 8px;
+    color: #797979;
+    margin: 0 auto;
+    font-weight: 20px;
+    background: #dde1e1;
+    border-radius: 5px;
+    border:none;
+    margin-bottom: 15px;
+}
+
+hr{
+    color: #dde1e1;
+    width: 100%;
+    height: 0.5px;
+    margin:0 auto;
+    opacity: 0.3;
+}
+.left_main{
+    
+    font-size: 14px;
+    float: left;
+    
+    line-height: 30px;
+    color: #797979;
+    
+}
+.right_main{
+ 
+    float: right;
+    color: #222;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: right;
+}
+.right_main>a>span{
+    color: #43c2cb;
+    text-decoration: underline;
+    font-size: 14px;
+    text-align: right;
+}
+.right_main>span{
+    color: #43c2cb;
+    text-decoration: underline;
+    font-size: 14px;
+    text-align: right;
+}
+.site_front{
+    float: left;
+    width: 70%;
+    height: 60px;
+    margin-bottom: 4px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.site_tail{
+    width: 30%;
+    height: 60px;
+    margin-bottom: 4px;
+    position: relative;
+    display: block;
+}
+.site_top_main{
+    width:100%;
+    height: 16px;
+    font-size: 12px;
+    margin-top: 10px;
+    line-height: 14px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    float: left;
+    color: #797979;
+}
+.site{
+    width: 100%;
+    height:30px;
+
+    margin-top: 10px;
+   margin-left: 15px;
+    overflow: hidden;
+}
+.site_icon{
+    position: relative;
+    display: block;
+    float: left;
+   
+    width: 17px;
+    height: 30px;
+}
+.site_text{
+    position:relative;
+    display: block;
+    float: left;
+    height: 30px;
+    color: #222;
+    
+    text-indent: 0.5em;
+    line-height: 28px;
+    font-size: 14px;
+   -o-text-overflow: ellipsis;/*兼容opera*/
+	text-overflow: ellipsis;/*这就是省略号喽*/		  
+	overflow: hidden;/*设置超过的隐藏*/
+	white-space: nowrap;/*设置不折行*/
+	width:85%;/*设置宽度*/
+}
+.site_allow{
+    width: 30px;
+    height: 30px;
+    margin-top: 20px;
+    float: right;
+}
+/*加时订单*/
+#addTime_Order{
+     width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 54px;
+    box-shadow: 1px 2px 2px #f3f3f3;
+}
+#main_addOrder{
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+.add_text{
+    float:right;
+    text-align: right;
+    width: 25%;
+    margin-right: 5%;
+    height: 14px;
+    margin-top: 26px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #fb5e79;
+}
+.addtime_order_li{
+    width: 95%;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    background: white;
+    list-style: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    
+}
+.m_order_time{
+   width: 65%; 
+   text-align: right;
+
+   float: right;
+   font-size: 11px;
+   line-height: 45px;
+   margin-right: 15px;
+   color: #797979;
+}
+.main_content>.left_main{
+   width: 25%;
+   margin-left: 15px;
+
+}
+.main_content>.right_main{
+    width: 65%;
+   margin-right: 15px;
+    
+}
+.main_content>.order_state{
+  margin-left: 15px;
+    width: 25%;
+}
+.addtime_order_li>.left_main{
+    width: 25%;
+   margin-left: 15px;
+}
+.addtime_order_li>hr{
+    width: 90%;
+    margin-left: 15px;
+}
+.main_content>hr{
+    width: 90%;
+    margin-left: 15px; 
+}
+.addtime_order_li>.order_state{
+    margin-left: 15px;
+    width: 35%;
+}
+.addtime_order_li>.right_main{
+    width: 65%;
+   margin-right: 15px;
+}
+.user_info>.left_main{
+    width: 25%;
+    margin-left: 15px;
+
+}
+.user_info>.right_main{
+    width: 65%;
+    margin-right: 15px;
+}
+.suiwei_info>.left_main{
+    width: 25%;
+    margin-left: 15px;
+}
+.suiwei_info>.right_main{
+    width: 65%;
+    margin-right: 15px;
+}

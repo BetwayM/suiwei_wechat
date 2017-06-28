@@ -1,0 +1,299 @@
+<!DOCTYPE>
+<html>
+    <title>随卫地图导航</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/mapstyle1.3.27.7.css">
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=5f62135f264a6557d27e9acb90cb0825&plugin=AMap.Autocomplete,AMap.PlaceSearch,AMap.Driving,AMap.Walking,AMap.CitySearch"></script>
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/DrivingRender1230.js"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/WalkingRender1230.js"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/TransferRender1230.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/AMap.DrivingRender1120.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/AMap.WalkingRender1120.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/AMap.TransferRender1120.css"> 
+    <link rel="stylesheet" href="../css/map.css"/>
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/vue.js"></script> 
+    <script src="../js/map.js"></script> 
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/> 
+     
+    </head>
+<body>
+    <script>
+            window.onload=function(){
+                var user_aim_site;
+                // 获取目标地址
+                var href=window.location.href;
+                
+                var latlng=href.substr(href.indexOf('?')+5,href.length)
+                var lat=latlng.substr(0,latlng.indexOf(','));
+                var lng=latlng.substr(latlng.indexOf('=')+1,latlng.length)
+                    $.ajax({
+                    type: 'POST',
+                    url:'http://restapi.amap.com/v3/geocode/regeo?key=23607f1a1d0fc69c3dea47551babe4d5&location='+lng+','+lat+'&poitype=%E5%95%86%E5%8A%A1%E5%86%99%E5%AD%97%E6%A5%BC&radius=1000&extensions=all&batch=false&roadlevel=0',
+                    data:{},
+                    dataType:"json",
+                    cache: false,
+                    success: function(data){
+                    if(data.status==1){
+                        user_aim_site=data.regeocode.formatted_address
+                        $("#aim_site").html(user_aim_site);
+                        $(".top_input input").val(user_aim_site)
+                    }    
+                    },
+                    error: function(e) { 
+                    alert("目标位置解析失败!")
+                    } 
+                });
+                // 
+                setInterval(function(){ 
+                    var t=$(".top_input input").val();
+                    if(t!=""){
+                    $(".clear").show().fadeIn("slow");
+                    }else{
+                    $(".clear").hide().fadeIn("slow");  
+                }
+                },10)
+                // 去除高德地图自定义css
+                $("style").remove();
+                
+                // 公交相关
+                setInterval(function(){
+                    var k=0;
+                    // 取消公交详情展示
+                    var detail_html="未获得详情"
+                        $(".bus_nav .amap-lib-transfer .plan").css("display","none")
+                        $(".bus_nav .amap-lib-transfer .planTitle").click(function(){
+                            $("#bus_nav").css("display","none").fadeOut("slow");
+                            $(".bus_main_num").html($(this).find("h3").html())
+                            $(".bus_main_subnum").html($(this).find("p").html());
+                            //添加到详情页面
+                            $(".bus_main_detail .amap-lib-transfer .plan").html($(this).next().html())
+                            $(".bus_main_detail .amap-lib-transfer .planTitle").html($(this).html())
+                            $(".bus_main_detail .amap-lib-transfer .plan").css("display","block")
+                }); 
+                 $(".bus_main_detail_btn").click(function(){
+                      $(".bus_main_detail").css("display","block");
+                            $(".bus_main_detail").animate({left:"0px"},"slow")
+                });
+                $(".detail_back").click(function(){
+                    
+                  $(".bus_main_detail").css("display","none");
+                });
+                // 公交车详情
+                $(".amap-lib-transfer .plan dd a.icon-arrow").click(function(){
+                    if($(this).parent().find('ul').css('display')=="none"){
+                        $(this).parent().find('ul').css("display","block");
+                        $(this).addClass("expand")
+
+                    }else{
+                        $(this).parent().find('ul').css("display","none");
+                        $(this).removeClass("expand")
+                    }
+                    
+                    
+                })
+                },10)
+               
+            }
+       
+        </script>
+        <!--导航栏-->
+    <div id="map_top_nav">
+            <div class="back_btn"><img src="../images/back_arrow.png" onclick="javascript:history.back(-1);" alt="" style="float:left;"> </div>
+            <div class="top_input"><input  type="text" name="" value="" class="search_top" id="search_top"  placeholder="搜索地址、公交站" onblur="showhistory(false)" onfocus="showhistory(true)"><img src="../images/clear.png" class="clear" onclick="clearSeaarch()" style="width:20px;height:20px; margin-top:-30px;" alt=""></div>
+            <div class="position"><img src="../images/position.png" onClick="setCenter(12)" alt="" style="float:right;"></div>
+            <!--<div id="search_His" v-show="his_show">
+                <div class="his_tool"  v-show="clear_his_show"><p class="his_tip">历史搜索记录</p><p class="clear_his">清空历史</p></div>
+                <p class="null_his" v-show="null_his_show">暂无搜索历史</p>
+                <li v-for="hi in his" class="history"><p class="last_site">{{hi.last}}</p><p class="first_site">{{hi.first}}</p><hr></li>
+            </div>-->
+        </div>
+<!--地图-->
+    <div id='container'></div>
+<!--底部导航-->
+    <div class="navi_btn" onclick="show_road(1)">去这里</div>
+        <div id="map_bottom_nav" >
+            <p class="site_tip">您要去的位置：</p>
+            <div class="users_site" ><img src="../images/site_icon.png" alt=""><p id="aim_site"></p></div>
+            <p class="site_tip">当前位置：</p>
+            <div class="users_site" ><img src="../images/site_icon.png" alt=""><p id="current_site"></p></div>
+        </div>
+<!--路径规划-->
+    <div id="suiwei_road" v-show="show">
+            <div class="road_top_nav">
+                <div class="back_btn" ><img src="../images/back_arrow.png" onclick="show_road(0)" alt="" style="float:left;"> </div>
+                <div class="road_nav_item" id="road_nav_item">
+                    <p class="nav_item" v-bind:style="styleObj1" onclick="suiwei_road.show_bus()">公交</p>
+                    <p class="nav_item" v-bind:style="styleObj2" onclick="suiwei_road.show_car()">驾车</p>
+                    <p class="nav_item" v-bind:style="styleObj3" onclick="suiwei_road.show_walk()">步行</p>
+                </div>
+            </div>
+            <div class="road_three">
+                    <div id="bus_road" v-show="bus_show">
+                        <div id="bus_map"></div>
+                        <div id="bus_main">
+                            <div class="bus_main_num">21路</div>
+                            <div class="bus_main_subnum">25分钟</div>
+                            <div class="bus_main_detail_btn">详情</div>
+                        </div>
+                        <div class="bus_main_detail">
+                            <div class="bus_detail_nav"><img src="../images/back_arrow.png" alt="" class="detail_back"><p>公交详情</p></div>
+                            <div class="amap-lib-transfer"><div class="planTitle"></div><div class="plan"></div></div>
+                        </div>
+                        <div class="bus_nav" id="bus_nav" style="display:block;"></div>
+                    </div>
+                    <div id="car_road" v-show="car_show">
+                        <div id="car_map"></div>
+                        <div class="drive_nav_tip"><button class="show_car_router" @click="show_instru_road()">查看驾车详情</button><br><p class="drive_nav_tip_text"></p><div class="car_instru">导航</div><div class="drive_nav" id="drive_nav" ></div></div>
+                        
+                    </div>
+                    <div id="walk_road" v-show="walk_show">
+                        <div id="walk_map"></div>
+                        <div class="walk_nav_tip">
+                          <button class="show_walk_router" @click="show_walk_road()">查看步行详情</button><br><p class="walk_nav_tip_text"></p><a><div class="walk_instru">导航</div></a><div class="walk_nav" id="walk_nav"></div> 
+                        </div>
+                        
+                    </div>
+                </div>
+        </div>
+<script type="text/javascript">
+/***************************************
+由于Chrome、IOS10等已不再支持非安全域的浏览器定位请求，为保证定位成功率和精度，请尽快升级您的站点到HTTPS。
+***************************************/
+    var map, geolocation;
+    // var user_aim_site="广东省珠海市金湾区红旗中学";
+    var user_curent_lnglatXY=[];
+    var user_search_site=user_aim_site;//用户搜索的地址
+    var sea_history=[];//搜索历史
+    var current_city="珠海市";
+    $("#aim_site").html(user_aim_site);
+     $(".top_input input").val(user_aim_site)
+    //加载地图，调用浏览器定位服务
+    map = new AMap.Map('container', {
+        mapStyle: 'amap://styles/normal',
+        resizeEnable: true,
+        zoom: 14
+    });
+    GetCity();//获得当前城市
+    map.setFeatures(['bg','road','building','point'])
+    // 定位
+    function getAPosition(){
+         map.plugin('AMap.Geolocation', function() {
+        geolocation = new AMap.Geolocation({
+            enableHighAccuracy: true,//是否使用高精度定位，默认:true
+            timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+        //定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+            zoomToAccuracy: true,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+            buttonPosition:'RB',
+            panToLocation:true,
+            showCircle:true,
+            showButton:false
+        });
+        map.addControl(geolocation);
+        
+        AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
+        AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
+    });
+    }
+    //    定位
+    getAPosition();
+    // 蓝点
+    geolocation.getCurrentPosition();
+
+
+
+//  //自定义定位标记
+    //    var toolBar= new AMap.ToolBar({
+    //     visible: false
+    // });
+    //    map.addControl(toolBar);
+    // var customMarker = new AMap.Marker({
+    //     offset: new AMap.Pixel(-13, -34),//相对于基点的位置
+    //     // icon: new AMap.Icon({  //复杂图标
+    //     //     size: new AMap.Size(48, 48),//图标大小
+    //     //     image: "../images/user_position.png", //大图地址
+    //     //     imageOffset: new AMap.Pixel(0, 0)//相对于大图的取图位置
+    //     // })
+    // });
+    // //地图中添加地图操作ToolBar插件
+    // var toolBar
+    // map.plugin(["AMap.ToolBar"], function() {
+    //     toolBar = new AMap.ToolBar({locationMarker: customMarker}); //设置地位标记为自定义标记
+    //     map.addControl(toolBar);
+    // });
+//解析定位结果
+function onComplete(data) {
+         $("#current_site").html(data.formattedAddress)
+         var lnglatXY=[data.position.getLng(), data.position.getLat()];//地图上所标点的坐标
+         user_curent_lnglatXY=lnglatXY;
+            var geocoder = new AMap.Geocoder({
+          city:""//城市，默认：“全国”
+        });
+        
+        map.setZoomAndCenter(14,[user_curent_lnglatXY[0],user_curent_lnglatXY[1]]);
+        // goToByBus();
+        // 公交导航
+    //    bus_Nav();
+ }
+//解析定位错误信息
+function onError(data) {
+        alert("定位失败！")
+ }
+    //将位置定在屏幕中间
+function setCenter(sc){
+        
+        map.setZoomAndCenter(sc,[user_curent_lnglatXY[0],user_curent_lnglatXY[1]]);
+        map.plugin('AMap.Geolocation', function() {
+        geolocation = new AMap.Geolocation({
+            enableHighAccuracy: true,//是否使用高精度定位，默认:true
+            timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+        //定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+            zoomToAccuracy: true,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+            buttonPosition:'RB',
+            panToLocation:true,
+            showCircle:true,
+            showButton:false
+        });
+        map.addControl(geolocation);
+        geolocation.getCurrentPosition();
+        AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
+        AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
+    });
+     }
+    //搜索
+        //输入提示
+    var autoOptions = {
+        input: "search_top"
+     };
+    var auto = new AMap.Autocomplete(autoOptions);
+    var placeSearch = new AMap.PlaceSearch({
+        map: map
+     });  //构造地点查询类
+     AMap.event.addListener(auto, "select", select);//注册监听，当选中某条记录时会触发
+function select(e) {
+        placeSearch.setCity(e.poi.adcode);
+        placeSearch.search(e.poi.name);  //关键字查询查询
+        user_search_site=e.poi.district+e.poi.name;
+        user_aim_site=user_search_site;
+        //隐藏历史记录
+        $("#aim_site").html(user_aim_site);
+        $("#map_top_nav").css("height","44px").fadeIn(4000);
+        $("#search_His").css("height","0").fadeIn(4000);   
+    }
+function closePoi(){
+        setTimeout(function() {
+            $(".amap-sug-result").css("display","none")
+        }, 500);
+    }
+</script>
+
+    
+<script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
+
+<script src="../js/map.js"></script> 
+</body>
+    </html>

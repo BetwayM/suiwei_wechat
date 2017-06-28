@@ -1,0 +1,43 @@
+<!DOCTYPE>
+<html lang="ch">
+    <title>个人中心</title>
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">    
+    <head>
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/loged.css">
+    <script src="../js/vue.js"></script> 
+    <script src="../js/jquery-3.2.1.js"></script> 
+    </head>
+    <body>
+        <div class="top_main" id="top_main">
+            <img src="../images/head_avatar.png" alt="" class="head_img">
+            <p style="margin-top:12px;" @click="kk()">绑定手机号码：{{suiweidata.apple}}</p>
+            <p>订单总量：{{suiweidata.count.len}}</p>
+            <button type="text" class="change_state">...</button>
+        </div>
+        <div class="all_order" id="all_order">
+            <li class="orderList" v-for="(li,index) in orderlist" @click="detail_Click(index)">
+                <p class="ordernum">订单编号&nbsp{{li.oid}}</p>
+                <div v-if="li.state==3" style="color:#fb5e79">
+                    <p class="order_state">执行中</p>
+                </div>
+                <div v-else-if="li.state==4" style="color:#fb5e79">
+                    <p class="order_state">执行中</p>
+                </div>
+                <div v-else-if="li.state==5" style="color:#43c2cb" >
+                    <p class="order_state">已完成</p>
+                </div>
+                <p class="order_time">下单时间&nbsp{{li.time}}</p>
+                <hr>
+                <p class="order_detail_btn">订单详情</p>
+                <img src="../images/detail_arrow.png" alt="" class="detail_arrow">
+            </li>
+        </div>
+        <div class="pop">
+            
+        </div>
+        <script src="../js/loged.js"></script>  
+    </body>    
+    </html>

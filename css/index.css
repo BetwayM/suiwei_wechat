@@ -1,0 +1,144 @@
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border:none;
+    background: url("../images/bg.jpg");
+    background-size: cover;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+
+    color:#f3f3f3;font-size:16px;
+     opacity: 0.3;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+
+    color:#f3f3f3;font-size:16px;
+    opacity: 0.3;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+
+    color:#f3f3f3;font-size:16px;
+     opacity: 0.3;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+
+    color:#f3f3f3;font-size:16px;
+     opacity: 0.3;
+}
+.head_avatar{
+    position: relative;
+    display: block;
+    width: 50px;
+    top: 25px;
+    height: 50px;
+    border: 0.5px solid white;
+    border-radius: 25px;
+    margin: 0 auto;
+}
+.input_phone{
+    width: 80%;
+    position: relative;
+    display: block;
+    top: 50px;
+    background-color:transparent; 
+    max-width: 400px;
+    min-width: 200px;
+    border:0.5px solid white;
+    border-radius: 30px;
+    text-indent: 1em;
+    height: 45px;
+    color: white;
+    margin: 0 auto;
+
+}
+.input_code_out{
+    width: 80%;
+    position: relative;
+    display: block;
+    top: 65px;
+    max-width: 400px;
+    min-width: 200px;
+    margin: 0 auto;
+}
+.input_code{
+    width: 70%;
+    height: 45px;
+     text-indent: 1em;
+    height: 45px;
+    color: white;
+    float: left;
+    background-color:transparent;
+
+    border:0.5px solid white;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.input_code_btn{
+    width: 30%;
+    height: 45px;
+    float: right;
+    color: #43c2cb;
+    font-size: 14px;
+    text-align: center;
+    background: white;
+    border: 0.5px solid #fff;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.commit_btn{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 82%;
+    height: 45px;
+    font-size: 18px;
+    background: white;
+    border-radius: 5px;
+    border:none;
+    top: 80px;
+    color: #43c2cb;
+    max-width: 400px;
+    min-width: 200px;
+}
+.logo{
+    position: relative;
+    display: block;
+    width: 78px;
+    height: 78px;
+    margin: 0 auto;
+    top: 250px;
+}
+footer{
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    line-height: 38px;
+    font-size: 11px;
+    color: white;
+    bottom: 0;
+   
+}
+footer>p{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+
+}
+footer>img{
+    width: 11px;
+    height: 11px;
+    position: relative;
+    top:-24px;
+    left: 54px;
+}
